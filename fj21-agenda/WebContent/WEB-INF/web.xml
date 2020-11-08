@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns="http://java.sun.com/xml/ns/javaee" 
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" 
+id="WebApp_ID" 
+version="3.0">
+  <display-name>fj21-agenda</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <!-- Quando não é colocado a página aqui no xml é preciso colocar o endereço completo do 
+  arquivo(http://localhost:8080/fj-21/index.html) no navegador.  
+  Caso contrário, pode chamar direto(http://localhost:8080/fj-21/index)
+  -->
+  <error-page>
+	<error-code>404</error-code>
+	<location>/404.html</location>
+ </error-page>
+ 
+ <error-page>
+	<exception-type>java.lang.Exception</exception-type>
+	<location>/erro.html</location>
+ </error-page>
+ 
+</web-app>
+
+<!-- Na nova especificação Servlets 3.0, que faz parte do Java EE 6, podemos configurar a maneira como
+vamos acessar a nossa Servlet de maneira programática, utilizando anotações simples, com o uso de @WebServlet("/oi")
+na própria classe. 
+@WebServlet("/oi") equivale à <url-pattern>/oi</url-pattern> ou tb
+@WebServlet(name = "MinhaServlet3", urlPatterns = {"/oi", "/ola"}) equivale à <servlet-name>
+-->
+
+<!-- 
+  <servlet>
+	<servlet-name>primeiraServlet</servlet-name>
+	<servlet-class>br.com.aula.servlet.OiMundo</servlet-class>
+  </servlet>	
+  
+  <servlet-mapping>
+	<servlet-name>primeiraServlet</servlet-name>
+	<url-pattern>/oi/*</url-pattern>
+  </servlet-mapping>
+ -->
+  
